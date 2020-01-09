@@ -1,7 +1,10 @@
 # php-osrm
- PHP client for Project-OSRM.
+PHP client for Project-OSRM.
 
-https://zinoui.com/
+| Build | Stable | License |
+|---|---|---|
+| [![Build Status](https://api.travis-ci.org/riverside/php-osrm.svg)](https://travis-ci.org/riverside/php-osrm) | [![Latest Stable Version](https://poser.pugx.org/riverside/php-osrm/v/stable)](https://packagist.org/packages/riverside/php-osrm) | [![License](https://poser.pugx.org/riverside/php-osrm/license)](https://packagist.org/packages/riverside/php-osrm) |
+
 #### Installation
 - via composer
 ```
