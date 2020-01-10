@@ -5,7 +5,7 @@ PHP client for Project-OSRM.
 |---|---|---|
 | [![Build Status](https://api.travis-ci.org/riverside/php-osrm.svg)](https://travis-ci.org/riverside/php-osrm) | [![Latest Stable Version](https://poser.pugx.org/riverside/php-osrm/v/stable)](https://packagist.org/packages/riverside/php-osrm) | [![License](https://poser.pugx.org/riverside/php-osrm/license)](https://packagist.org/packages/riverside/php-osrm) |
 
-#### Installation
+### Installation
 - If Composer is already installed
 ```
 composer require riverside/php-osrm
@@ -27,12 +27,12 @@ Finally, use Composer to install php-osrm and its dependencies:
 $ php composer.phar install
 ```
 
-#### Loading
+### Loading
 ```php
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-#### API
+### API
 - Nearest
 - Route
 - Table
@@ -40,7 +40,7 @@ require __DIR__ . '/vendor/autoload.php';
 - Trip
 - Tile
 
-#### Links
+### Links
 - http://project-osrm.org/
 - https://github.com/Project-OSRM
 - https://wiki.openstreetmap.org/wiki/Open_Source_Routing_Machine
