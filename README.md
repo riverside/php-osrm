@@ -33,29 +33,12 @@ require __DIR__ . '/vendor/autoload.php';
 ```
 
 ## API
-- Nearest
-- Route
-- Table
-- Match
-- Trip
-- Tile
-
-## Usage
-```php
-$route = new \OSRM\Service\Route();
-try {
-    $response = $route->fetch('13.388860,52.517037;13.397634,52.529407');
-    if ($response->isOK()) {
-        print_r($response->toArray());
-    } else {
-        echo $response->getError();
-    }
-} catch (\OSRM\Exception $e) {
-    echo $e->getMessage();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
-```
+- [Nearest](./tree/master/examples/nearest.php) - Snaps a coordinate to the street network and returns the nearest `n` matches.
+- [Route](./tree/master/examples/route.php) - Finds the fastest route between coordinates in the supplied order.
+- [Table](./tree/master/examples/table.php) - Computes the duration of the fastest route between all pairs of supplied coordinates. Returns the durations or distances or both between the coordinate pairs.
+- [Match](./tree/master/examples/match.php) - Map matching matches/snaps given GPS points to the road network in the most plausible way.
+- [Trip](./tree/master/examples/trip.php) - Solves the Traveling Salesman Problem using a greedy heuristic (farthest-insertion algorithm) for 10 or more waypoints and uses brute force for less than 10 waypoints.
+- [Tile](./tree/master/examples/tile.php) - Generates [Mapbox Vector Tiles](https://www.mapbox.com/developers/vector-tiles/) that can be viewed with a vector-tile capable slippy-map viewer.
 
 ## Links
 - http://project-osrm.org/
