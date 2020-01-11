@@ -5,7 +5,7 @@ PHP client for Project-OSRM.
 |---|---|---|
 | [![Build Status](https://api.travis-ci.org/riverside/php-osrm.svg)](https://travis-ci.org/riverside/php-osrm) | [![Latest Stable Version](https://poser.pugx.org/riverside/php-osrm/v/stable)](https://packagist.org/packages/riverside/php-osrm) | [![License](https://poser.pugx.org/riverside/php-osrm/license)](https://packagist.org/packages/riverside/php-osrm) |
 
-### Installation
+## Installation
 - If Composer is already installed
 ```
 composer require riverside/php-osrm
@@ -14,7 +14,7 @@ composer require riverside/php-osrm
 ```
 $ curl -sS https://getcomposer.org/installer | php
 ```
-Next, add the following require entry to the composer.json file in the root of your project.
+Next, add the following require entry to the `composer.json` file in the root of your project.
 ```json
 {
     "require" : {
@@ -22,17 +22,17 @@ Next, add the following require entry to the composer.json file in the root of y
     }
 }
 ```
-Finally, use Composer to install php-osrm and its dependencies:
+Finally, use Composer to install **php-osrm** and its dependencies:
 ```
 $ php composer.phar install
 ```
 
-### Loading
+## Loading
 ```php
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-### API
+## API
 - Nearest
 - Route
 - Table
@@ -40,7 +40,24 @@ require __DIR__ . '/vendor/autoload.php';
 - Trip
 - Tile
 
-### Links
+## Usage
+```php
+$route = new \OSRM\Service\Route();
+try {
+    $response = $route->fetch('13.388860,52.517037;13.397634,52.529407');
+    if ($response->isOK()) {
+        print_r($response->toArray());
+    } else {
+        echo $response->getError();
+    }
+} catch (\OSRM\Exception $e) {
+    echo $e->getMessage();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+```
+
+## Links
 - http://project-osrm.org/
 - https://github.com/Project-OSRM
 - https://wiki.openstreetmap.org/wiki/Open_Source_Routing_Machine
