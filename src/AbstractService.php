@@ -30,7 +30,7 @@ abstract class AbstractService
         $uri = "$this->service/$this->version/$this->profile/$this->coordinates.$this->format";
         if ($this->options)
         {
-            $uri .= "?" . http_build_query($this->options, null, '&');
+            $uri .= "?" . http_build_query($this->options, "", '&');
         }
 
         return $uri;
