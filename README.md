@@ -3,7 +3,7 @@ PHP client for Project-OSRM.
 
 | Build | Stable | License |
 | ----- | ------ | ------- |
-| [![Build Status][x1]][y1] | [![Latest Stable Version][x2]][y2] | [![License][x3]][y3] |
+| [![CI][x1]][y1] | [![Latest Stable Version][x2]][y2] | [![License][x3]][y3] |
 
 ## Installation
 - If Composer is already installed
@@ -55,8 +55,8 @@ require __DIR__ . '/vendor/autoload.php';
 [8]: http://project-osrm.org/
 [9]: https://github.com/Project-OSRM
 [10]: https://wiki.openstreetmap.org/wiki/Open_Source_Routing_Machine
-[x1]: https://api.travis-ci.org/riverside/php-osrm.svg
-[y1]: https://travis-ci.org/riverside/php-osrm
+[x1]: https://github.com/riverside/php-osrm/actions/workflows/test.yml/badge.svg
+[y1]: https://github.com/riverside/php-osrm/actions/workflows/test.yml
 [x2]: https://poser.pugx.org/riverside/php-osrm/v/stable
 [y2]: https://packagist.org/packages/riverside/php-osrm
 [x3]: https://poser.pugx.org/riverside/php-osrm/license
