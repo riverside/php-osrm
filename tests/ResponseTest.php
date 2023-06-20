@@ -20,29 +20,29 @@ class ResponseTest extends TestCase
 
     public function testCode()
     {
-        $response = new Response($this->data);
+        $response = new Response($this->data, 'route');
 
         $this->assertTrue($response->isOK(), 'Response code should be OK');
     }
 
     public function testError()
     {
-        $response = new Response($this->data);
+        $response = new Response($this->data, 'route');
 
         $this->assertEmpty($response->getError(), 'Response should not have a error');
     }
 
     public function testArray()
     {
-        $response = new Response($this->data);
+        $response = new Response($this->data, 'route');
 
         $this->assertIsArray($response->toArray(), 'Response data should be an array');
     }
 
     public function testJson()
     {
-        $response = new Response($this->data);
+        $response = new Response($this->data, 'route');
 
-        $this->assertJson($response->toJson(), 'Response data should ne json');
+        $this->assertJson($response->toJson(), 'Response data should be json');
     }
 }
