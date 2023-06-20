@@ -6,14 +6,16 @@ $tile = new \OSRM\Service\Tile();
 try {
 	$response = $tile
         ->setProfile('car')
-        ->fetch('tile(1310,3166,18).mvt');
+        ->fetch('tile(1310,3166,13)');
+
 	if ($response->isOK())
     {
 		echo '<pre>';
-		print_r($response->toArray());
+		echo strlen($response->getResponse());
 	} else {
 		echo 'Tile not found.';
 	}
+
 } catch (\OSRM\Exception $e) {
 	echo $e->getMessage();
 } catch (Exception $e) {
