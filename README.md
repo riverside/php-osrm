@@ -48,7 +48,7 @@ require __DIR__ . '/vendor/autoload.php';
 [1]: https://github.com/riverside/php-osrm/tree/master/examples/nearest.php
 [2]: https://github.com/riverside/php-osrm/tree/master/examples/route.php
 [3]: https://github.com/riverside/php-osrm/tree/master/examples/table.php
-[4]: https://github.com/riverside/php-osrm/tree/master/examples/match.php
+[4]: https://github.com/riverside/php-osrm/tree/master/examples/matcher.php
 [5]: https://github.com/riverside/php-osrm/tree/master/examples/trip.php
 [6]: https://github.com/riverside/php-osrm/tree/master/examples/tile.php
 [7]: https://www.mapbox.com/developers/vector-tiles/
