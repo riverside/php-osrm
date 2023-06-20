@@ -5,19 +5,22 @@ class Response
 {
     protected $data;
 
-    public function __construct($data)
+    protected $service;
+
+    public function __construct($data, $service)
     {
-        $this->data = json_decode($data, true);
+        $this->data = $service != 'tile' ? json_decode($data, true) : $data;
+        $this->service = $service;
     }
 
     public function toJson(): string
     {
-        return json_encode($this->data);
+        return json_encode($this->toArray());
     }
 
-    public function toArray(): array
+    public function toArray()
     {
-        return $this->data;
+        return is_array($this->data) ? $this->data : array($this->data);
     }
 
     public function getError()
@@ -25,8 +28,15 @@ class Response
         return !$this->isOK() ? $this->data['code'] : null;
     }
 
+    public function getResponse()
+    {
+        return $this->data;
+    }
+
     public function isOK(): bool
     {
-        return isset($this->data['code']) && $this->data['code'] == 'Ok';
+        return $this->service != 'tile'
+            ? (isset($this->data['code']) && $this->data['code'] == 'Ok')
+            : true;
     }
 }
