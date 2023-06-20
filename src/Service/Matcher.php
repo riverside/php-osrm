@@ -4,7 +4,7 @@ namespace OSRM\Service;
 use OSRM\AbstractService;
 use OSRM\Exception;
 
-class Match extends AbstractService
+class Matcher extends AbstractService
 {
     protected $service = 'match';
 
