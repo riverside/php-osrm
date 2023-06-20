@@ -27,6 +27,11 @@
       "OSRM\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "OSRM\\Tests\\": "tests/"
+    }
+  },
   "scripts": {
     "test": "vendor/bin/phpunit"
   }
