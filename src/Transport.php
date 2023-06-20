@@ -15,7 +15,12 @@ class Transport
 
     protected $userAgent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36';
 
-    public function request($uri)
+    /**
+     * @param string $uri
+     * @return $this
+     * @throws Exception
+     */
+    public function request($uri): Transport
     {
         $ch = curl_init();
         if (!$ch)
@@ -47,7 +52,7 @@ class Transport
         return $this;
     }
 
-    public function getHttpCode()
+    public function getHttpCode(): int
     {
         return $this->httpCode;
     }
@@ -57,28 +62,28 @@ class Transport
         return $this->response;
     }
 
-    public function setConnectTimeout($value)
+    public function setConnectTimeout(int $value): Transport
     {
         $this->connectTimeout = (int) $value;
 
         return $this;
     }
 
-    public function setTimeout($value)
+    public function setTimeout(int $value): Transport
     {
         $this->timeout = (int) $value;
 
         return $this;
     }
 
-    public function setUserAgent($value)
+    public function setUserAgent(string $value): Transport
     {
         $this->userAgent = $value;
 
         return $this;
     }
 
-    public function setSslVerifyPeer($value)
+    public function setSslVerifyPeer(bool $value): Transport
     {
         $this->sslVerifyPeer = (bool) $value;
 

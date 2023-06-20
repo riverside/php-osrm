@@ -10,12 +10,12 @@ class Response
         $this->data = json_decode($data, true);
     }
 
-    public function toJson()
+    public function toJson(): string
     {
         return json_encode($this->data);
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return $this->data;
     }
@@ -25,7 +25,7 @@ class Response
         return !$this->isOK() ? $this->data['code'] : null;
     }
 
-    public function isOK()
+    public function isOK(): bool
     {
         return isset($this->data['code']) && $this->data['code'] == 'Ok';
     }
