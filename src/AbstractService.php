@@ -22,7 +22,7 @@ abstract class AbstractService
         $transport = new Transport();
         $transport->request($this->getUri());
 
-        return new Response($transport->getResponse());
+        return new Response($transport->getResponse(), $this->service);
     }
 
     public function getUri()
