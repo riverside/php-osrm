@@ -8,4 +8,6 @@ class Tile extends AbstractService
     protected $service = 'tile';
 
     protected $profile = 'car';
+
+    protected $format = 'mvt';
 }
