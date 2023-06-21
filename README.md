@@ -51,7 +51,7 @@ require __DIR__ . '/vendor/autoload.php';
 [4]: https://github.com/riverside/php-osrm/tree/master/examples/matcher.php
 [5]: https://github.com/riverside/php-osrm/tree/master/examples/trip.php
 [6]: https://github.com/riverside/php-osrm/tree/master/examples/tile.php
-[7]: https://www.mapbox.com/developers/vector-tiles/
+[7]: https://docs.mapbox.com/api/maps/vector-tiles/
 [8]: http://project-osrm.org/
 [9]: https://github.com/Project-OSRM
 [10]: https://wiki.openstreetmap.org/wiki/Open_Source_Routing_Machine
