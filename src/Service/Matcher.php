@@ -6,29 +6,57 @@ use OSRM\Exception;
 
 class Matcher extends AbstractService
 {
+    /**
+     * @var string
+     */
     protected $service = 'match';
 
-    public function setSteps($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setSteps(string $value)
     {
         return $this->_setSteps($value);
     }
 
-    public function setGeometries($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setGeometries(string $value)
     {
         return $this->_setGeometries($value);
     }
 
-    public function setAnnotations($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setAnnotations(string $value)
     {
         return $this->_setAnnotations($value);
     }
 
-    public function setOverview($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setOverview(string $value)
     {
         return $this->_setOverview($value);
     }
 
-    public function setTimestamps($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setTimestamps(string $value)
     {
         if (!preg_match('/^\d{10}(?:;\d{10})*$/', $value))
         {
@@ -38,7 +66,12 @@ class Matcher extends AbstractService
         return $this->setOption('timestamps', $value);
     }
 
-    public function setGaps($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setGaps(string $value)
     {
         if (!in_array($value, array('split', 'ignore')))
         {
@@ -48,7 +81,12 @@ class Matcher extends AbstractService
         return $this->setOption('gaps', $value);
     }
 
-    public function setTidy($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setTidy(string $value)
     {
         if (!in_array($value, array('true', 'false')))
         {
@@ -58,7 +96,12 @@ class Matcher extends AbstractService
         return $this->setOption('tidy', $value);
     }
 
-    public function setWaypoints($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setWaypoints(string $value)
     {
         return $this->_setWaypoints($value);
     }

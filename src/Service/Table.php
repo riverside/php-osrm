@@ -6,9 +6,17 @@ use OSRM\Exception;
 
 class Table extends AbstractService
 {
+    /**
+     * @var string
+     */
     protected $service = 'table';
 
-    public function setSources($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setSources(string $value): AbstractService
     {
         if (!($value == 'all' || preg_match('/^\d+(?:;\d+)*$/', $value)))
         {
@@ -18,7 +26,12 @@ class Table extends AbstractService
         return $this->setOption('sources', $value);
     }
 
-    public function setDestinations($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setDestinations(string $value): AbstractService
     {
         if (!($value == 'all' || preg_match('/^\d+(?:;\d+)*$/', $value)))
         {
@@ -28,7 +41,12 @@ class Table extends AbstractService
         return $this->setOption('destinations', $value);
     }
 
-    public function setAnnotations($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setAnnotations(string $value): AbstractService
     {
         if (!in_array($value, array('duration', 'distance', 'duration,distance')))
         {
@@ -38,7 +56,12 @@ class Table extends AbstractService
         return $this->setOption('annotations', $value);
     }
 
-    public function setFallbackSpeed($value)
+    /**
+     * @param float $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setFallbackSpeed(float $value): AbstractService
     {
         if (!is_float($value))
         {
@@ -48,7 +71,12 @@ class Table extends AbstractService
         return $this->setOption('fallback_speed', $value);
     }
 
-    public function setFallbackCoordinate($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setFallbackCoordinate(string $value): AbstractService
     {
         if (!in_array($value, array('input', 'snapped')))
         {
@@ -58,7 +86,12 @@ class Table extends AbstractService
         return $this->setOption('fallback_coordinate', $value);
     }
 
-    public function setScaleFactor($value)
+    /**
+     * @param float $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setScaleFactor(float $value): AbstractService
     {
         if (!is_float($value))
         {

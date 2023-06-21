@@ -3,19 +3,42 @@ namespace OSRM;
 
 abstract class AbstractService
 {
-    protected $coordinates = null;
+    /**
+     * @var string
+     */
+    protected $coordinates = '';
 
+    /**
+     * @var string
+     */
     protected $format = 'json';
 
+    /**
+     * @var array
+     */
     protected $options = array();
 
+    /**
+     * @var string
+     */
     protected $profile = 'driving'; // driving, car, bike, foot
 
-    protected $service = null; //route, nearest, table, match, trip, tile
+    /**
+     * @var string
+     */
+    protected $service = ''; //route, nearest, table, match, trip, tile
 
+    /**
+     * @var string
+     */
     protected $version = 'v1';
 
-    public function fetch($coordinates)
+    /**
+     * @param string $coordinates
+     * @return Response
+     * @throws Exception
+     */
+    public function fetch(string $coordinates): Response
     {
         $this->coordinates = $coordinates;
 
@@ -25,7 +48,10 @@ abstract class AbstractService
         return new Response($transport->getResponse(), $this->service);
     }
 
-    public function getUri()
+    /**
+     * @return string
+     */
+    public function getUri(): string
     {
         $uri = "$this->service/$this->version/$this->profile/$this->coordinates.$this->format";
         if ($this->options)
@@ -36,38 +62,64 @@ abstract class AbstractService
         return $uri;
     }
 
-    public function setOption($key, $value)
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return AbstractService
+     */
+    public function setOption(string $key, $value): AbstractService
     {
         $this->options[$key] = $value;
 
         return $this;
     }
 
-    public function setProfile($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     */
+    public function setProfile(string $value): AbstractService
     {
         $this->profile = $value;
 
         return $this;
     }
 
-    public function setVersion($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     */
+    public function setVersion(string $value): AbstractService
     {
         $this->version = $value;
 
         return $this;
     }
 
-    public function setBearings($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     */
+    public function setBearings(string $value): AbstractService
     {
         return $this->setOption('bearings', $value);
     }
 
-    public function setRadiuses($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     */
+    public function setRadiuses(string $value): AbstractService
     {
         return $this->setOption('radiuses', $value);
     }
 
-    public function setGenerateHints($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setGenerateHints(string $value): AbstractService
     {
         if (!in_array($value, array('true', 'false')))
         {
@@ -77,12 +129,21 @@ abstract class AbstractService
         return $this->setOption('generate_hints', $value);
     }
 
-    public function setHints($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     */
+    public function setHints(string $value): AbstractService
     {
         return $this->setOption('hints', $value);
     }
 
-    public function setApproaches($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setApproaches(string $value): AbstractService
     {
         if (!preg_match('/^(?:curb|unrestricted)(?:;(?:curb|unrestricted))*$/', $value))
         {
@@ -92,12 +153,21 @@ abstract class AbstractService
         return $this->setOption('approaches', $value);
     }
 
-    public function setExclude($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     */
+    public function setExclude(string $value): AbstractService
     {
         return $this->setOption('exclude', $value);
     }
 
-    protected function _setGeometries($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    protected function _setGeometries(string $value): AbstractService
     {
         if (!in_array($value, array('polyline', 'polyline6', 'geojson')))
         {
@@ -107,7 +177,12 @@ abstract class AbstractService
         return $this->setOption('geometries', $value);
     }
 
-    protected function _setSteps($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    protected function _setSteps(string $value): AbstractService
     {
         if (!in_array($value, array('true', 'false')))
         {
@@ -117,7 +192,12 @@ abstract class AbstractService
         return $this->setOption('steps', $value);
     }
 
-    protected function _setAnnotations($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    protected function _setAnnotations(string $value): AbstractService
     {
         if (!in_array($value, array('true', 'false', 'nodes', 'distance', 'duration', 'datasources', 'weight', 'speed')))
         {
@@ -127,7 +207,12 @@ abstract class AbstractService
         return $this->setOption('annotations', $value);
     }
 
-    protected function _setOverview($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    protected function _setOverview(string $value): AbstractService
     {
         if (!in_array($value, array('simplified', 'full', 'false')))
         {
@@ -137,7 +222,12 @@ abstract class AbstractService
         return $this->setOption('overview', $value);
     }
 
-    protected function _setWaypoints($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    protected function _setWaypoints(string $value): AbstractService
     {
         if (!preg_match('/^\d+(?:(?:;\d+)?)+$/', $value))
         {

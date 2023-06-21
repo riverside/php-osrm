@@ -6,9 +6,17 @@ use OSRM\Exception;
 
 class Nearest extends AbstractService
 {
+    /**
+     * @var string
+     */
     protected $service = 'nearest';
 
-    public function setNumber($value)
+    /**
+     * @param int $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setNumber(int $value): AbstractService
     {
         if (!(is_numeric($value) && (int) $value >= 1))
         {

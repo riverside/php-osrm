@@ -6,29 +6,57 @@ use OSRM\Exception;
 
 class Trip extends AbstractService
 {
+    /**
+     * @var string
+     */
     protected $service = 'trip';
 
-    public function setOverview($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setOverview(string $value): AbstractService
     {
         return $this->_setOverview($value);
     }
 
-    public function setSteps($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setSteps(string $value): AbstractService
     {
         return $this->_setSteps($value);
     }
 
-    public function setGeometries($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setGeometries(string $value): AbstractService
     {
         return $this->_setGeometries($value);
     }
 
-    public function setAnnotations($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setAnnotations(string $value): AbstractService
     {
         return $this->_setAnnotations($value);
     }
 
-    public function setSource($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setSource(string $value): AbstractService
     {
         if (!in_array($value, array('any', 'first')))
         {
@@ -38,7 +66,12 @@ class Trip extends AbstractService
         return $this->setOption('source', $value);
     }
 
-    public function setDestination($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setDestination(string $value): AbstractService
     {
         if (!in_array($value, array('any', 'last')))
         {
@@ -48,7 +81,12 @@ class Trip extends AbstractService
         return $this->setOption('destination', $value);
     }
 
-    public function setRoundtrip($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setRoundtrip(string $value): AbstractService
     {
         if (!in_array($value, array('true', 'false')))
         {

@@ -6,9 +6,17 @@ use OSRM\Exception;
 
 class Route extends AbstractService
 {
+    /**
+     * @var string
+     */
     protected $service = 'route';
 
-    public function setAlternatives($value)
+    /**
+     * @param $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setAlternatives($value): AbstractService
     {
         if (!(in_array($value, array('true', 'false')) || is_numeric($value)))
         {
@@ -18,27 +26,52 @@ class Route extends AbstractService
         return $this->setOption('alternatives', $value);
     }
 
-    public function setSteps($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setSteps(string $value): AbstractService
     {
         return $this->_setSteps($value);
     }
 
-    public function setAnnotations($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setAnnotations(string $value): AbstractService
     {
         return $this->_setAnnotations($value);
     }
 
-    public function setGeometries($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setGeometries(string $value): AbstractService
     {
         return $this->_setGeometries($value);
     }
 
-    public function setOverview($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setOverview(string $value): AbstractService
     {
         return $this->_setOverview($value);
     }
 
-    public function setContinueStraight($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setContinueStraight(string $value): AbstractService
     {
         if (!in_array($value, array('default', 'true', 'false')))
         {
@@ -48,7 +81,12 @@ class Route extends AbstractService
         return $this->setOption('continue_straight', $value);
     }
 
-    public function setWaypoints($value)
+    /**
+     * @param string $value
+     * @return AbstractService
+     * @throws Exception
+     */
+    public function setWaypoints(string $value): AbstractService
     {
         return $this->_setWaypoints($value);
     }
