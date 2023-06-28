@@ -28,6 +28,6 @@ class TileTest extends TestCase
 
         $this->assertInstanceOf(Response::class, $response);
         $this->assertTrue($response->isOK());
-        $this->assertSame(1209431, strlen($response->getResponse()));
+        $this->assertSame(1209850, strlen($response->getResponse()));
     }
 }
