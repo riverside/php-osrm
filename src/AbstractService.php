@@ -1,6 +1,8 @@
 <?php
 namespace OSRM;
 
+use OSRM\Response\Service as ServiceResponse;
+
 abstract class AbstractService
 {
     /**
@@ -35,17 +37,17 @@ abstract class AbstractService
 
     /**
      * @param string $coordinates
-     * @return Response
+     * @return ServiceResponse
      * @throws Exception
      */
-    public function fetch(string $coordinates): Response
+    public function fetch(string $coordinates): ServiceResponse
     {
         $this->coordinates = $coordinates;
 
         $transport = new Transport();
         $transport->request($this->getUri());
 
-        return new Response($transport->getResponse(), $this->service);
+        return new ServiceResponse($transport->getResponse(), $this->service);
     }
 
     /**
@@ -53,7 +55,7 @@ abstract class AbstractService
      */
     public function getUri(): string
     {
-        $uri = "$this->service/$this->version/$this->profile/$this->coordinates.$this->format";
+        $uri = "http://router.project-osrm.org/{$this->service}/{$this->version}/{$this->profile}/{$this->coordinates}.{$this->format}";
         if ($this->options)
         {
             $uri .= "?" . http_build_query($this->options, "", '&');
