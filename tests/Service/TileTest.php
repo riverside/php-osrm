@@ -3,7 +3,7 @@ namespace OSRM\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
 use OSRM\Service\Tile;
-use OSRM\Response;
+use OSRM\Response\Service as ServiceResponse;
 
 class TileTest extends TestCase
 {
@@ -26,7 +26,7 @@ class TileTest extends TestCase
             ->setProfile('car')
             ->fetch('tile(1310,3166,13)');
 
-        $this->assertInstanceOf(Response::class, $response);
+        $this->assertInstanceOf(ServiceResponse::class, $response);
         $this->assertTrue($response->isOK());
         $this->assertSame(1209850, strlen($response->getResponse()));
     }

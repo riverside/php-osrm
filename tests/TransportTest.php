@@ -29,7 +29,7 @@ class TransportTest extends TestCase
         $this->assertInstanceOf(Transport::class, $transport->setTimeout(30));
         $this->assertInstanceOf(Transport::class, $transport->setSslVerifyPeer(true));
         $this->assertInstanceOf(Transport::class, $transport->setUserAgent('Chrome'));
-        $this->assertInstanceOf(Transport::class, $transport->request('route/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219?overview=false'));
+        $this->assertInstanceOf(Transport::class, $transport->request('http://router.project-osrm.org/route/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219?overview=false'));
         $this->assertIsInt($transport->getHttpCode());
         $this->assertSame(200, $transport->getHttpCode());
         $this->assertNotEmpty($transport->getResponse());
