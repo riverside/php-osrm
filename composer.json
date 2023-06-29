@@ -2,7 +2,7 @@
   "name": "riverside/php-osrm",
   "description": "PHP client for Project-OSRM.",
   "type": "library",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "keywords": ["php", "osm", "osrm", "openstreetmap", "distance"],
   "homepage": "https://github.com/riverside/php-osrm",
   "license": "MIT",
