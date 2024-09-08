@@ -1,10 +1,16 @@
 <?php
-namespace OSRM\Tests\Service;
+declare(strict_types=1);
+
+namespace Riverside\Osrm\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use OSRM\Service\Nearest;
-use OSRM\Response\Service as ServiceResponse;
+use Riverside\Osrm\Service\Nearest;
+use Riverside\Osrm\Response\Service as ServiceResponse;
 
+/**
+ * Class NearestTest
+ * @package Riverside\Osrm\Tests\Service
+ */
 class NearestTest extends TestCase
 {
     public function testNearest()

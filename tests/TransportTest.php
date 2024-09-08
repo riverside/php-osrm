@@ -1,10 +1,16 @@
 <?php
-namespace OSRM\Tests;
+declare(strict_types=1);
 
-use OSRM\Exception;
+namespace Riverside\Osrm\Tests;
+
+use Riverside\Osrm\Exception;
 use PHPUnit\Framework\TestCase;
-use OSRM\Transport;
+use Riverside\Osrm\Transport;
 
+/**
+ * Class TransportTest
+ * @package Riverside\Osrm\Tests
+ */
 class TransportTest extends TestCase
 {
     public function testAttributes()

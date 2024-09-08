@@ -1,10 +1,16 @@
 <?php
-namespace OSRM\Tests\Service;
+declare(strict_types=1);
+
+namespace Riverside\Osrm\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use OSRM\Service\Matcher;
-use OSRM\Response\Service as ServiceResponse;
+use Riverside\Osrm\Service\Matcher;
+use Riverside\Osrm\Response\Service as ServiceResponse;
 
+/**
+ * Class MatcherTest
+ * @package Riverside\Osrm\Tests\Service
+ */
 class MatcherTest extends TestCase
 {
     public function testMatcher()

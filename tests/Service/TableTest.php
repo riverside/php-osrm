@@ -1,9 +1,11 @@
 <?php
-namespace OSRM\Tests\Service;
+declare(strict_types=1);
+
+namespace Riverside\Osrm\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use OSRM\Service\Table;
-use OSRM\Response\Service as ServiceResponse;
+use Riverside\Osrm\Service\Table;
+use Riverside\Osrm\Response\Service as ServiceResponse;
 
 class TableTest extends TestCase
 {
