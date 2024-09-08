@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../src/autoload.php';
 
-$tile = new \OSRM\Service\Tile();
+$tile = new \Riverside\Osrm\Service\Tile();
 
 try {
 	$response = $tile
@@ -16,7 +16,7 @@ try {
 		echo 'Tile not found.';
 	}
 
-} catch (\OSRM\Exception $e) {
+} catch (\Riverside\Osrm\Exception $e) {
 	echo $e->getMessage();
 } catch (Exception $e) {
 	echo $e->getMessage();

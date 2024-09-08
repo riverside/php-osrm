@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../src/autoload.php';
 
-$inst = new \OSRM\Isochrones\OpenRouteService();
+$inst = new \Riverside\Osrm\Isochrones\OpenRouteService();
 
 $inst->setApiKey('{api_key}');
 
@@ -21,7 +21,7 @@ try {
     } else {
         echo 'Isochrone not found.';
     }
-} catch (\OSRM\Exception $e) {
+} catch (\Riverside\Osrm\Exception $e) {
     echo $e->getMessage();
 } catch (Exception $e) {
     echo $e->getMessage();

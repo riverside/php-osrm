@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../src/autoload.php';
 
-$table = new \OSRM\Service\Table();
+$table = new \Riverside\Osrm\Service\Table();
 
 try {
 	$response = $table
@@ -14,7 +14,7 @@ try {
 	} else {
 		echo 'Table not found.';
 	}
-} catch (\OSRM\Exception $e) {
+} catch (\Riverside\Osrm\Exception $e) {
 	echo $e->getMessage();
 } catch (Exception $e) {
 	echo $e->getMessage();

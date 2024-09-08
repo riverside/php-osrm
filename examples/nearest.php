@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../src/autoload.php';
 
-$nearest = new \OSRM\Service\Nearest();
+$nearest = new \Riverside\Osrm\Service\Nearest();
 
 try {
 	$response = $nearest
@@ -14,7 +14,7 @@ try {
 	} else {
 		echo 'Nearest not found.';
 	}
-} catch (\OSRM\Exception $e) {
+} catch (\Riverside\Osrm\Exception $e) {
 	echo $e->getMessage();
 } catch (Exception $e) {
 	echo $e->getMessage();

@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../src/autoload.php';
 
-$route = new \OSRM\Service\Route();
+$route = new \Riverside\Osrm\Service\Route();
 
 try {
 	$response = $route
@@ -14,7 +14,7 @@ try {
 	} else {
 		echo 'Route not found.';
 	}
-} catch (\OSRM\Exception $e) {
+} catch (\Riverside\Osrm\Exception $e) {
 	echo $e->getMessage();
 } catch (Exception $e) {
 	echo $e->getMessage();
