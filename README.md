@@ -18,7 +18,7 @@ Next, add the following require entry to the `composer.json` file in the root of
 ```json
 {
     "require" : {
-        "riverside/php-osrm" : "*"
+        "riverside/php-osrm" : "^2.0"
     }
 }
 ```
