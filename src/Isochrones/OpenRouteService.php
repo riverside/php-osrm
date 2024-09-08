@@ -1,16 +1,17 @@
 <?php
-namespace OSRM\Isochrones;
+declare(strict_types=1);
 
-use OSRM\AbstractIsochrones;
-use OSRM\Exception;
-use OSRM\Response\Isochrones as IsochronesResponse;
-use OSRM\Transport;
+namespace Riverside\Osrm\Isochrones;
+
+use Riverside\Osrm\AbstractIsochrones;
+use Riverside\Osrm\Exception;
+use Riverside\Osrm\Response\Isochrones as IsochronesResponse;
+use Riverside\Osrm\Transport;
 
 /**
  * Class OpenRouteService
- *
  * @see https://openrouteservice.org/dev/#/api-docs/v2/isochrones/{profile}/post
- * @package OSRM\Isochrones
+ * @package Riverside\Osrm\Isochrones
  */
 class OpenRouteService extends AbstractIsochrones
 {

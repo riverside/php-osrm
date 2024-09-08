@@ -1,9 +1,15 @@
 <?php
-namespace OSRM\Service;
+declare(strict_types=1);
 
-use OSRM\AbstractService;
-use OSRM\Exception;
+namespace Riverside\Osrm\Service;
 
+use Riverside\Osrm\AbstractService;
+use Riverside\Osrm\Exception;
+
+/**
+ * Class Matcher
+ * @package Riverside\Osrm\Service
+ */
 class Matcher extends AbstractService
 {
     /**
@@ -16,7 +22,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setSteps(string $value)
+    public function setSteps(string $value): AbstractService
     {
         return $this->_setSteps($value);
     }
@@ -26,7 +32,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setGeometries(string $value)
+    public function setGeometries(string $value): AbstractService
     {
         return $this->_setGeometries($value);
     }
@@ -36,7 +42,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setAnnotations(string $value)
+    public function setAnnotations(string $value): AbstractService
     {
         return $this->_setAnnotations($value);
     }
@@ -46,7 +52,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setOverview(string $value)
+    public function setOverview(string $value): AbstractService
     {
         return $this->_setOverview($value);
     }
@@ -56,7 +62,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setTimestamps(string $value)
+    public function setTimestamps(string $value): AbstractService
     {
         if (!preg_match('/^\d{10}(?:;\d{10})*$/', $value))
         {
@@ -71,7 +77,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setGaps(string $value)
+    public function setGaps(string $value): AbstractService
     {
         if (!in_array($value, array('split', 'ignore')))
         {
@@ -86,7 +92,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setTidy(string $value)
+    public function setTidy(string $value): AbstractService
     {
         if (!in_array($value, array('true', 'false')))
         {
@@ -101,7 +107,7 @@ class Matcher extends AbstractService
      * @return AbstractService
      * @throws Exception
      */
-    public function setWaypoints(string $value)
+    public function setWaypoints(string $value): AbstractService
     {
         return $this->_setWaypoints($value);
     }

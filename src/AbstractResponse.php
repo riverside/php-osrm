@@ -1,6 +1,12 @@
 <?php
-namespace OSRM;
+declare(strict_types=1);
 
+namespace Riverside\Osrm;
+
+/**
+ * Class AbstractResponse
+ * @package Riverside\Osrm
+ */
 abstract class AbstractResponse
 {
     /**

@@ -1,9 +1,22 @@
 <?php
-namespace OSRM;
+declare(strict_types=1);
 
+namespace Riverside\Osrm;
+
+use Riverside\Osrm\Response\Isochrones as IsochronesResponse;
+/**
+ * Class AbstractIsochrones
+ * @package Riverside\Osrm
+ */
 abstract class AbstractIsochrones
 {
-    abstract public function fetch();
+    /**
+     * @return IsochronesResponse
+     */
+    abstract public function fetch(): IsochronesResponse;
 
-    abstract public function getUri();
+    /**
+     * @return string
+     */
+    abstract public function getUri(): string;
 }

@@ -1,8 +1,14 @@
 <?php
-namespace OSRM\Response;
+declare(strict_types=1);
 
-use OSRM\AbstractResponse;
+namespace Riverside\Osrm\Response;
 
+use Riverside\Osrm\AbstractResponse;
+
+/**
+ * Class Isochrones
+ * @package Riverside\Osrm\Response
+ */
 class Isochrones extends AbstractResponse
 {
     /**

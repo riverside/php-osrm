@@ -1,6 +1,12 @@
 <?php
-namespace OSRM;
+declare(strict_types=1);
 
+namespace Riverside\Osrm;
+
+/**
+ * Class Transport
+ * @package Riverside\Osrm
+ */
 class Transport
 {
     /**
@@ -53,7 +59,7 @@ class Transport
     protected $sslVerifyPeer = false;
 
     /**
-     * Tiemout
+     * Timeout
      *
      * @var int
      */

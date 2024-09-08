@@ -1,8 +1,14 @@
 <?php
-namespace OSRM\Response;
+declare(strict_types=1);
 
-use OSRM\AbstractResponse;
+namespace Riverside\Osrm\Response;
 
+use Riverside\Osrm\AbstractResponse;
+
+/**
+ * Class Service
+ * @package Riverside\Osrm\Response
+ */
 class Service extends AbstractResponse
 {
     /**

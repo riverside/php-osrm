@@ -1,9 +1,15 @@
 <?php
-namespace OSRM\Service;
+declare(strict_types=1);
 
-use OSRM\AbstractService;
-use OSRM\Exception;
+namespace Riverside\Osrm\Service;
 
+use Riverside\Osrm\AbstractService;
+use Riverside\Osrm\Exception;
+
+/**
+ * Class Table
+ * @package Riverside\Osrm\Service
+ */
 class Table extends AbstractService
 {
     /**

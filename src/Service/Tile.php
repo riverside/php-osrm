@@ -1,8 +1,14 @@
 <?php
-namespace OSRM\Service;
+declare(strict_types=1);
 
-use OSRM\AbstractService;
+namespace Riverside\Osrm\Service;
 
+use Riverside\Osrm\AbstractService;
+
+/**
+ * Class Tile
+ * @package Riverside\Osrm\Service
+ */
 class Tile extends AbstractService
 {
     /**
